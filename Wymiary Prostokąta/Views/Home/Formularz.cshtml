@@ -1,0 +1,24 @@
+﻿@model Wymiary_Prostokąta.Models.ProstokatViewModel
+
+<form asp-controller="Home" asp-action="Oblicz" method="post">
+    <div>
+        <label for="Wysokosc">Wysokość:</label>
+        <input type="number" id="Wysokosc" name="Wysokosc" min="0" max="1000000" required value="@Model.Wysokosc" />
+        <select name="Jednostka" required>
+            <option value="mm">mm</option>
+            <option value="cm">cm</option>
+            <option value="m">m</option>
+        </select>
+    </div>
+    <div>
+        <label for="Szerokosc">Szerokość:</label>
+        <input type="number" id="Szerokosc" name="Szerokosc" min="0" max="1000000" required value="@Model.Szerokosc" />
+    </div>
+    <!-- Dodatkowe pole do wyświetlania wyniku -->
+    <div>
+        <label for="Wynik">Wynik:</label>
+        <!-- Dodanie jednostki do wyświetlanego wyniku -->
+        <input type="text" id="Wynik" name="Wynik" readonly value="@Model.Wynik @Model.Jednostka" />
+    </div>
+    <button type="submit">Oblicz</button>
+</form>
