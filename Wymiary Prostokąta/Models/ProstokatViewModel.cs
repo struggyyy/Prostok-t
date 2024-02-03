@@ -15,6 +15,10 @@ namespace Wymiary_Prostokąta.Models
         [Required(ErrorMessage = "Wybierz jednostkę")]
         public string Jednostka { get; set; }
 
+        // Dodatkowe pole do przechowywania wyniku
         public double Wynik { get; set; }
+
+        // Flaga określająca, czy wynik został obliczony
+        public bool CzyObliczono { get; set; }
     }
 }

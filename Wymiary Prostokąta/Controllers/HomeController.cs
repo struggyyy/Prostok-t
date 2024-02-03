@@ -28,14 +28,16 @@ namespace Wymiary_Prostokąta.Controllers
             {
                 // Oblicz pole prostokąta
                 var pole = _prostokatService.ObliczPole(model.Wysokosc, model.Szerokosc, model.Jednostka);
-                // Ustaw wynik w modelu
+                // Ustaw wynik i ustaw flagę CzyObliczono na true
                 model.Wynik = pole;
+                model.CzyObliczono = true;
                 // Przekazanie modelu z powrotem do widoku
                 return View("Formularz", model);
             }
             // Jeśli model jest nieprawidłowy, zwróć widok Formularz z aktualnym modelem
             return View("Formularz", model);
         }
+
 
 
 

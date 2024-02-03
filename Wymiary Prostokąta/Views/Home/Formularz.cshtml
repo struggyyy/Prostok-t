@@ -17,8 +17,8 @@
     <!-- Dodatkowe pole do wyświetlania wyniku -->
     <div>
         <label for="Wynik">Wynik:</label>
-        <!-- Dodanie jednostki do wyświetlanego wyniku -->
-        <input type="text" id="Wynik" name="Wynik" readonly value="@Model.Wynik @Model.Jednostka" />
+        <!-- Dodanie jednostki powierzchni do wyświetlanego wyniku -->
+        <input type="text" id="Wynik" name="Wynik" readonly value="@Model.Wynik @(Model.CzyObliczono ? Model.Jednostka + "^2" : "")" />
     </div>
     <button type="submit">Oblicz</button>
 </form>
